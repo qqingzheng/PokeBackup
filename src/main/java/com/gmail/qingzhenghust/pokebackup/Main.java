@@ -25,14 +25,13 @@ public class Main extends JavaPlugin implements Listener{
             freezelogs.add(logs.get(logs.size()-1));
             logs.remove(logs.size()-1);
             plugin.getConfig().set("FreezeLogs", freezelogs);
-            plugin.getConfig().set("Logs", freezelogs);
+            plugin.getConfig().set("Logs", logs);
             plugin.saveConfig();
         }
         runTask();
     }
     @Override
     public void onDisable(){
-        reloadConfig();
         BackupAPI.backUpForAllPlayer(String.valueOf(System.currentTimeMillis()), true);
     }
     public void init(){

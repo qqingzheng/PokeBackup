@@ -57,6 +57,7 @@ public class CommandListener implements CommandExecutor{
                 if(args[0].equalsIgnoreCase("unfreeze")){
                     int id = Integer.valueOf(args[1]);
                     List<String> list = Main.plugin.getConfig().getStringList("FreezeLogs");
+                    BackupAPI.deleteBackup(BackupAPI.getDir(list.get(id)));
                     list.remove(id);
                     Main.plugin.getConfig().set("FreezeLogs", list);
                     Main.plugin.saveConfig();

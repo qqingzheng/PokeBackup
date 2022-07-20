@@ -18,6 +18,17 @@ import net.minecraft.nbt.CompoundNBT;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 
 public class BackupAPI {   
+    public static void deleteBackup(String path){
+        File file = new File(path);
+        if(file.exists()){
+            File delFile[]=file.listFiles();
+            int i = file.listFiles().length;
+            for(int j=0; j<i; ++j){
+                delFile[j].delete();
+            }
+            file.delete();
+        }
+    }
     public static String getDir(String backupId){
         return Main.plugin.pluginPath+"/data/"+backupId+"/";
     }
@@ -31,15 +42,7 @@ public class BackupAPI {
             logs.add(backupId);
         }
         if(logs.size() > Main.plugin.getConfig().getInt("Settings.maxBackupTimes")){
-            File file = new File(getDir(logs.get(0)));
-            if(file.exists()){
-                File delFile[]=file.listFiles();
-                int i = file.listFiles().length;
-                for(int j=0; j<i; ++j){
-                    delFile[j].delete();
-                }
-                file.delete();
-            }
+            deleteBackup(getDir(logs.get(0)));
             logs.remove(0);
         }
         Main.plugin.getConfig().set("Logs", logs);
