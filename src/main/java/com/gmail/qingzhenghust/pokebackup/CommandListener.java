@@ -55,9 +55,9 @@ public class CommandListener implements CommandExecutor{
             }
             if(args.length == 2){
                 if(args[0].equalsIgnoreCase("unfreeze")){
-                    String id = args[1];
+                    int id = Integer.valueOf(args[1]);
                     List<String> list = Main.plugin.getConfig().getStringList("FreezeLogs");
-                    list.remove(Integer.valueOf(id));
+                    list.remove(id);
                     Main.plugin.getConfig().set("FreezeLogs", list);
                     Main.plugin.saveConfig();
                     sender.sendMessage("成功解冻");
