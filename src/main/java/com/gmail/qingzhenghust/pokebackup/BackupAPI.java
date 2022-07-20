@@ -32,7 +32,7 @@ public class BackupAPI {
         }
         if(logs.size() > Main.plugin.getConfig().getInt("Settings.maxBackupTimes")){
             logs.remove(0);
-            File file = new File(getDir(backupId));
+            File file = new File(getDir(logs.get(0)));
             if(file.exists()){
                 File delFile[]=file.listFiles();
                 int i = file.listFiles().length;
