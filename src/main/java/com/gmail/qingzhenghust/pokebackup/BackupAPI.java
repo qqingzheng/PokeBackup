@@ -31,7 +31,6 @@ public class BackupAPI {
             logs.add(backupId);
         }
         if(logs.size() > Main.plugin.getConfig().getInt("Settings.maxBackupTimes")){
-            logs.remove(0);
             File file = new File(getDir(logs.get(0)));
             if(file.exists()){
                 File delFile[]=file.listFiles();
@@ -41,7 +40,7 @@ public class BackupAPI {
                 }
                 file.delete();
             }
-            
+            logs.remove(0);
         }
         Main.plugin.getConfig().set("Logs", logs);
         Main.plugin.saveConfig();
