@@ -1,0 +1,6 @@
+name: PokeBackup
+main: com.gmail.qingzhenghust.pokebackup.Main
+version: 1.0.0
+commands:
+  pokebackup:
+    description: 宝可梦备份插件

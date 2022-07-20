@@ -16,6 +16,8 @@ out
 # gradle
 build
 .gradle
+libs
+gradle
 
 # other
 eclipse
@@ -23,3 +25,15 @@ run
 
 # Files from Forge MDK
 forge*changelog.txt
+LICENSE.txt
+gradlew
+gradle.properties
+gradlew.bat
+CREDITS.txt
+changelog.txt
+README.md
+build.gradle
+.vscode/settings.json
+.gitignore
+.gitattributes
+.gitignore

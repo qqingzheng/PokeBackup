@@ -1,0 +1,8 @@
+Settings:
+  # 自动备份的时间间隔
+  backUpInterval: 600
+  # 最大保留备份次数（不建议太高，除非硬盘够用）
+  maxBackupTimes: 3
+Logs: []
+# 冻结的记录（每次开服会将关服最后一次备份冻结）
+FreezeLogs: []
