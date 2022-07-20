@@ -64,7 +64,7 @@ public class CommandListener implements CommandExecutor{
                     return true;
                 }
             }
-            if(args.length == 3){
+            if(args.length == 4){
                 if(args[0].equalsIgnoreCase("recover")){
                     String id = args[2];
                     String logtype = args[1];
